@@ -95,7 +95,8 @@ public class ContoCorrenteDao {
 	
 	public void cancellaContoCorrente(ContoCorrente c) throws SQLException, NamingException {
 		DataSource ds = (DataSource) new InitialContext().lookup("java:/banca");
-		Connection dbConnection = ds.getConnection();		java.sql.PreparedStatement cmd = null;
+		Connection dbConnection = ds.getConnection();		
+		java.sql.PreparedStatement cmd = null;
 		String updateTableSQL = "DELETE FROM contocorrente WHERE iban=?";
 		cmd = dbConnection.prepareStatement(updateTableSQL);
 		cmd.setInt(1, c.getIban());
