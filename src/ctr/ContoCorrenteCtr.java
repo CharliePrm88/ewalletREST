@@ -89,7 +89,7 @@ public class ContoCorrenteCtr {
 	@GET
 	@Path("/ritornaCC")
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseContoCorrente ritornaCC(@QueryParam("id") int id) {
+	public ResponseContoCorrente ritornaCC(@QueryParam("idCliente") int id) {
 		try {
 			ContoCorrente cc= ccd.ritornaContoCorrente(id);
 			rcc = new ResponseContoCorrente("Ok!",200,"Conto Corrente trovato!", cc, null);
